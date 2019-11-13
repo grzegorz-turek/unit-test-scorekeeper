@@ -1,0 +1,41 @@
+.Player {
+    list-style-type: none;
+}
+
+.Player__name {
+    display: inline-flex;
+    width: 100px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+}
+
+.Player__score {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+}
+
+.Player__button {
+    display: inline-flex;
+    justify-content: center;
+    width: 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    user-select: none;
+    background-color: lightgrey;
+}
+
+.Player__button:hover {
+    background-color: grey;
+    cursor: pointer;
+}

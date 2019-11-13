@@ -45,3 +45,14 @@ it('decreases score by one point', () => {
 
     expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
 });
+
+it('should remove player', () => {
+
+    const mockedOnPlayerRemove = jest.fn();
+    const playerComponent = shallow(<Player onPlayerRemove={mockedOnPlayerRemove} />);
+
+    const removeButton = playerComponent.find('.Player__button').at(2);
+    removeButton.simulate('click');
+
+    expect(mockedOnPlayerRemove).toBeCalled();
+});

@@ -1,0 +1,22 @@
+input[type=text] {
+    width: 240px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    outline: none;
+}
+
+input[type=submit] {
+    width: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+input[type=submit]:hover {
+    background-color: grey;
+}
