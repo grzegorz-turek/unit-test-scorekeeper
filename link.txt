@@ -1,2 +1,11 @@
 https://stackoverflow.com/questions/5820977/jquery-add-class-to-div-while-removing-it-from-others
 https://stackoverflow.com/questions/5057191/toggleclass-and-remove-class-from-all-other-elements/5057229
+https://www.tutorialrepublic.com/faq/how-to-check-an-element-is-visible-or-not-using-jquery.php
+https://www.tutorialrepublic.com/codelab.php?topic=faq&file=jquery-detect-if-an-element-is-visible-on-screen
+https://codepen.io/anon/pen/pbppxd
+https://developers.google.com/speed/libraries#jquery
+http://jsfiddle.net/g9L9R/
+https://stackoverflow.com/questions/41069511/change-the-content-of-a-div-based-on-selection-from-a-list
+https://stackoverflow.com/questions/49052037/change-div-content-based-on-list-item-click/49052190
+https://stackoverflow.com/questions/6164507/change-the-content-of-a-div-based-on-selection-from-dropdown-menu
+https://jsfiddle.net/Gloak/0cndazt6/2/
