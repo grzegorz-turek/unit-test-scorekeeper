@@ -1,0 +1,2 @@
+https://stackoverflow.com/questions/5820977/jquery-add-class-to-div-while-removing-it-from-others
+https://stackoverflow.com/questions/5057191/toggleclass-and-remove-class-from-all-other-elements/5057229
