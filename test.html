@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <style>
+            .inv {
+                display: none;
+            }
+        </style>
+
+        <h1>SELECT</h1>
+        <select id="target">
+            <option value="">Select...</option>
+            <option value="content_1">Option 1</option>
+            <option value="content_2">Option 2</option>
+            <option value="content_3">Option 3</option>
+        <select>
+
+        <div id="content_1" class="inv">Content 1</div>
+        <div id="content_2" class="inv">Content 2</div>
+        <div id="content_3" class="inv">Content 3</div>
+
+        <script>
+            document
+                .getElementById('target')
+                .addEventListener('change', function () {
+                    'use strict';
+                    var vis = document.querySelector('.vis'),   
+                        target = document.getElementById(this.value);
+                    if (vis !== null) {
+                        vis.className = 'inv';
+                    }
+                    if (target !== null ) {
+                        target.className = 'vis';
+                    }
+            });
+        </script>
+
+<!-- NEXT SCRIPT -->
+        <h1>VERSION 1</h1>
+
+        <div class="size">
+            <a href="">blahblah</a>
+            <a href="">blahblah</a>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+
+                $(".size a").on('click', function() {
+                    $('.size a.checked').not(this).removeClass('checked');
+                    $(this).toggleClass('checked');
+                });
+
+            });
+        </script>
+
+
+<!-- NEXT SCRIPT -->
+        <h1>VERSION 2</h1>
+
+        <ul id="list">
+            <li><a class="a1" href="#">Alabama</a></li>
+            <li><a class="a2" href="#">Alaska</a></li>
+            <li><a class="a3" href="#">Arizona</a></li>
+            <li><a class="a4" href="#">Arkansas</a></li>
+            <li><a class="a5" href="#">California</a></li>
+        </ul>
+
+        <div id="selection">
+            <div class="a1 test">child 1</div>
+            <div class="a2 test">child 2</div>
+            <div class="a3 test">child 3</div>
+            <div class="a4 test">child 4</div>
+            <div class="a5 test">child 5</div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                //var index = $('#list').index(this);
+                //console.log(index);
+
+                $('#list a').on('click', function(e) {
+                    e.preventDefault();
+                    //$('#selection').text($(this).text());
+                    //$('#selection').toggle();
+                    
+                    //$('#selection').children().toggle();
+                    $('#selection').children().removeClass('test');
+                    //$('selection').children().removeClass('test');
+
+                    //event.target.className
+
+                });
+            });
+        </script>
+
+<!-- NEXT SCRIPT -->
+        <h1>VERSION 2.5</h1>
+
+        <div id="list01">
+            <div style="cursor: pointer">List 01</div>
+            <div style="cursor: pointer">List 02</div>
+            <div style="cursor: pointer">List 03</div>
+            <div style="cursor: pointer">List 04</div>
+            <div style="cursor: pointer">List 05</div>
+        </div>
+
+        <div id="output01">
+            <div>Output 1</div>
+            <div>Output 2</div>
+            <div>Output 3</div>
+            <div>Output 4</div>
+            <div>Output 5</div>
+        </div>
+
+        <script>
+
+            $(document).ready(function() {
+                var ind = 0;
+                $('#list01 div').eq(ind).show();
+                $('#list01 div').eq(ind).siblings().hide();
+                $('#output01 div').eq(ind).show();
+                $('#output01 div').eq(ind).siblings().hide();
+
+                $('#list01').on('click', function() {
+                    $('#list01').children().show();
+                    $('#list01 div').on('click', function(e) {
+                        //e.stopPropagation();
+                        ind = $('#list01 div').index(this);
+                        $('#list01 div').eq(ind).show();
+                        $('#list01 div').eq(ind).siblings().hide();
+                        $('#output01 div').eq(ind).show();
+                        $('#output01 div').eq(ind).siblings().hide();
+                    });
+                    console.log(ind);
+
+                });
+/*
+                $('#list01 div').on('click', function(e) {
+                    ind = $('#list01 div').index(this);
+                    $('#output01 div').eq(ind).show();
+                    $('#output01 div').eq(ind).siblings().hide();
+                });
+*/
+            });
+        </script>
+
+
+<!--
+<style>
+    div {
+      background: yellow;
+      margin: 5px;
+    }
+    span {
+      color: red;
+    }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+   
+  <span>Click a div!</span>
+  <div>First div</div>
+  <div>Second div</div>
+  <div>Third div</div>
+   
+  <script>
+  $( "div" ).click(function() {
+    // `this` is the DOM element that was clicked
+    var index = $( "div" ).index( this );
+    $( "span" ).text( "That was div index #" + index );
+  });
+  </script>
+-->
+
+
+<!-- NEXT SCRIPT -->
+        <h1>VERSION </h1>
+
+        <style>
+            .hid {
+                display: none;
+            }
+
+            .sho {
+                display: block;
+            }
+        </style>
+
+        <ul id="list_01">
+            <li><a href="#">Ala 01</a></li>
+            <li><a href="#">Ala 02</a></li>
+            <li><a href="#">Ala 03</a></li>
+            <li><a href="#">Ala 04</a></li>
+            <li><a href="#">Ala 05</a></li>
+        </ul>
+
+
+        <div id="content_01" class="sho cont">Lalala 01</div>
+        <div id="content_02" class="hid content">Lalala 02</div>
+        <div id="content_03" class="hid content">Lalala 03</div>
+
+        <div id='output'></div>
+
+        <!--
+        <script>
+
+            var list_01 = document.getElementById('list_01');
+            var output = document.getElementById('output');
+
+            list_01.addEventListener('click', (e) => {
+                //console.log('working');
+                e.preventDefault(); // don't navigate to <a> tag href
+                //if (e.target.tagName === 'A') {
+                    //output.textContent = e.target.textContent;
+                    output.innerHTML = e.target.textContent;
+
+                //}
+            });
+
+        </script>
+        -->
+
+        <script>
+            document
+                .getElementById('list_01')
+                .addEventListener('click', function () {
+                    'use strict';
+                    var vis = document.querySelector('.vis'),   
+                        target = document.getElementById(this.value);
+                    if (vis !== null) {
+                        vis.className = 'inv';
+                    }
+                    if (target !== null ) {
+                        target.className = 'vis';
+                    }
+            });
+
+
+            function toggleMenu(visible) {
+                document.querySelector('.content').classList.toggle('sho', visible);
+            }
+
+            document.querySelector('#list_01').addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleMenu();
+            });
+
+        </script>
+
+    </body>
+
+</html>
