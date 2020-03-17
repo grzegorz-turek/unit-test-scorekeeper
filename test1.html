@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <div id="list01">
+            <div style="cursor: pointer">List 01</div>
+            <div style="cursor: pointer">List 02</div>
+            <div style="cursor: pointer">List 03</div>
+            <div style="cursor: pointer">List 04</div>
+            <div style="cursor: pointer">List 05</div>
+        </div>
+
+        <div id="output01">
+            <div>Output 1</div>
+            <div>Output 2</div>
+            <div>Output 3</div>
+            <div>Output 4</div>
+            <div>Output 5</div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                var ind = 0;
+                $('#list01 div').eq(ind).show();
+                $('#list01 div').eq(ind).siblings().hide();
+                $('#output01 div').eq(ind).show();
+                $('#output01 div').eq(ind).siblings().hide();
+
+                $('#list01').on('click', function() {
+                    $('#list01').children().show();
+                    $('#list01 div').on('click', function(e) {
+                        //e.stopPropagation();
+                        ind = $('#list01 div').index(this);
+                        $('#list01 div').eq(ind).show();
+                        $('#list01 div').eq(ind).siblings().hide();
+                        $('#output01 div').eq(ind).show();
+                        $('#output01 div').eq(ind).siblings().hide();
+                    });
+                    console.log(ind);
+                });
+            });
+        </script>
+
+    </body>
+
+</html>
